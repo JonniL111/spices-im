@@ -1,6 +1,6 @@
 // VARIABLES & PATHS
 
-let preprocessor = 'sass', // Preprocessor (sass, scss, less, styl)
+let preprocessor = 'scss', // Preprocessor (sass, scss, less, styl)
     fileswatch   = 'html,htm,txt,json,md,woff2', // List of files extensions for watching & hard reload (comma separated)
     imageswatch  = 'jpg,jpeg,png,webp,svg', // List of images extensions for watching & compression (comma separated)
     baseDir      = 'app', // Base directory path without «/» at the end
@@ -10,7 +10,10 @@ let paths = {
 
 	scripts: {
 		src: [
-			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			'node_modules/jquery/dist/jquery.min.js',
+			'node_modules/slick-carousel/slick/slick.min.js', 
+			'node_modules/smoothscroll-for-websites/SmoothScroll.js', 
+			baseDir + '/libs/scrolAnimate/scrol.js', // app.js. Always at the end
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',
@@ -41,9 +44,7 @@ let paths = {
 // LOGIC
 
 const { src, dest, parallel, series, watch } = require('gulp');
-const sass         = require('gulp-sass');
 const scss         = require('gulp-sass');
-const less         = require('gulp-less');
 const styl         = require('gulp-stylus');
 const cleancss     = require('gulp-clean-css');
 const concat       = require('gulp-concat');

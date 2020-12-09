@@ -23,5 +23,10 @@
 		"gulp-sass": "^4.1.0",
 		"gulp-stylus": "^2.7.0",
 		"gulp-uglify-es": "^2.0.0"
+	},
+	"dependencies": {
+		"jquery": "^3.5.1",
+		"slick-carousel": "^1.8.1",
+		"smoothscroll-for-websites": "^1.4.10"
 	}
 }

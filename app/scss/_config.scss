@@ -1,21 +1,24 @@
 // USER VARIABLES SECTION
 
-$accent: orange; // Accent Color
-$fontsize: 16px; // Body Font Size
-$textcolor: #333; // Text Color
+$accent: #fcb28e; // Accent Color
+$fontsize: 14px; // Body Font Size
+$green: #558888;
+$textcolor: #373737; // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
 $roboto: Roboto, sans-serif; // Roboto Font Family
+$arizonia: Arizonia, sans-serif; // Arizonia Font Family
+$ubuntu: Ubuntu, sans-serif; // Arizonia Font Family
 
 // Bootstrap compatible gutter variable => $gutter
-$grid-gutter-width: 20px;
+$grid-gutter-width: 30px;
 $gutter: $grid-gutter-width;
 
 // IMPORT SECTION
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
-// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+@import '../libs/font-awesome-4.7.0/css/font-awesome.min.css'; //Bootstrap Reboot collection
+@import 'node_modules/slick-carousel/slick/slick.scss'; 
+//@import '../libs/rangeSlider/ion.rangeSlider.min.css'; 
 
 // FONTS LOAD SECTION
 
@@ -33,11 +36,17 @@ $gutter: $grid-gutter-width;
 @include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
 @include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
 @include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+@include font('Ubuntu', normal, 300, '../fonts/ubuntulight.woff2');
+@include font('Ubuntu', normal, 400, '../fonts/ubuntu.woff2');
+@include font('Ubuntu', normal, 500, '../fonts/ubuntumedium.woff2');
+@include font('Ubuntu', normal, 700, '../fonts/ubuntubold.woff2');
+
+@include font('Arizonia', normal, 400, '../fonts/arizonia-webfont.woff2');
 
 // GENERAL DOCUMENT STYLES
 
 ::placeholder {
-	color: #666;
+	color: #404f4d;
 }
 
 ::selection {
@@ -52,11 +61,83 @@ input, textarea {
 }
 
 body {
-	font-family: $roboto;
+	font-family: $ubuntu;
 	font-size: $fontsize;
 	min-width: 320px;
 	position: relative;
+	font-weight: 400;
 	line-height: 1.65;
 	overflow-x: hidden;
 	color: $textcolor;
+	background-color: #f2f2f2;
+}
+
+button{
+	&:focus,
+  &:active{
+    outline: 0!important;
+    outline-color: transparent!important;
+    outline-width: 0!important;
+    outline-style: none!important;
+    box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+  }
+}
+
+
+.container{
+	max-width: 1200px;
+	padding: 0 $gutter/2;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.row{
+	margin-left: -$gutter/2;
+	margin-right: -$gutter/2;
+}
+.wrapper{
+	max-width: 1250px;
+	padding: 0 15px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.relative{
+	position: relative;
+	z-index: 2;
+}
+
+.wrapper-no-padding{
+	max-width: 1250px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	&:hover{
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+h1,h2,h3,h4,h5,h6, p{
+	color: inherit;
+	margin: 0;
+	font-weight: 400;
+}
+
+ul, li, p{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+html{
+	box-sizing: border-box;
+}
+
+.white{
+	background-color: #fff;
 }
