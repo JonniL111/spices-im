@@ -17,19 +17,18 @@ $gutter: $grid-gutter-width;
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
 @import '../libs/font-awesome-4.7.0/css/font-awesome.min.css'; //Bootstrap Reboot collection
-@import 'node_modules/slick-carousel/slick/slick.scss'; 
-//@import '../libs/rangeSlider/ion.rangeSlider.min.css'; 
+@import 'node_modules/slick-carousel/slick/slick.scss';
 
 // FONTS LOAD SECTION
 
 @mixin font($fname, $fstyle, $fweight, $furl) {
-	@font-face {
-		font-family: $fname;
-		font-style: $fstyle;
-		font-weight: $fweight;
-		// font-display: swap; // Uncomment to initially display system fonts
-		src: local($fname), url($furl) format('woff2');
-	}
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: local($fname), url($furl) format('woff2');
+    font-display: swap;
+  }
 }
 
 @include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
@@ -46,98 +45,110 @@ $gutter: $grid-gutter-width;
 // GENERAL DOCUMENT STYLES
 
 ::placeholder {
-	color: #404f4d;
+  color: #404f4d;
 }
 
 ::selection {
-	background-color: $accent;
-	color: #fff;
+  background-color: $accent;
+  color: #fff;
 }
 
-input, textarea {
-	outline: none;
-	&:focus:required:invalid { border-color: red }
-	&:required:valid { border-color: green }
-}
-
-body {
-	font-family: $ubuntu;
-	font-size: $fontsize;
-	min-width: 320px;
-	position: relative;
-	font-weight: 400;
-	line-height: 1.65;
-	overflow-x: hidden;
-	color: $textcolor;
-	background-color: #f2f2f2;
-}
-
-button{
-	&:focus,
-  &:active{
-    outline: 0!important;
-    outline-color: transparent!important;
-    outline-width: 0!important;
-    outline-style: none!important;
-    box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+input,
+textarea {
+  outline: none;
+  &:focus:required:invalid {
+    border-color: red;
+  }
+  &:required:valid {
+    border-color: green;
   }
 }
 
-
-.container{
-	max-width: 1200px;
-	padding: 0 $gutter/2;
-	margin: 0 auto;
-	height: 100%;
+body {
+  font-family: $ubuntu;
+  font-size: $fontsize;
+  min-width: 320px;
+  position: relative;
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+  color: $textcolor;
+  background-color: #f2f2f2;
 }
 
-.row{
-	margin-left: -$gutter/2;
-	margin-right: -$gutter/2;
-}
-.wrapper{
-	max-width: 1250px;
-	padding: 0 15px;
-	margin: 0 auto;
-	height: 100%;
-}
-
-.relative{
-	position: relative;
-	z-index: 2;
+button {
+  &:focus,
+  &:active {
+    outline: 0 !important;
+    outline-color: transparent !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
+  }
 }
 
-.wrapper-no-padding{
-	max-width: 1250px;
-	margin: 0 auto;
-	height: 100%;
+.container {
+  max-width: 1200px;
+  padding: 0 $gutter/2;
+  margin: 0 auto;
+  height: 100%;
 }
 
-a{
-	text-decoration: none;
-	color: inherit;
-	&:hover{
-		text-decoration: none;
-		color: inherit;
-	}
+.row {
+  margin-left: -$gutter/2;
+  margin-right: -$gutter/2;
+}
+.wrapper {
+  max-width: 1250px;
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100%;
 }
 
-h1,h2,h3,h4,h5,h6, p{
-	color: inherit;
-	margin: 0;
-	font-weight: 400;
+.relative {
+  position: relative;
+  z-index: 2;
 }
 
-ul, li, p{
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.wrapper-no-padding {
+  max-width: 1250px;
+  margin: 0 auto;
+  height: 100%;
 }
 
-html{
-	box-sizing: border-box;
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
-.white{
-	background-color: #fff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: inherit;
+  margin: 0;
+  font-weight: 400;
+}
+
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.white {
+  background-color: #fff;
 }
